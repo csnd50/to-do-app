@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Todo App API
 
 This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
@@ -234,3 +235,7 @@ Response (for admin role):
 
 
 
+=======
+# TO-DO-APP
+This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
+>>>>>>> origin/master
