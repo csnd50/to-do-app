@@ -34,6 +34,7 @@ API Endpoints
     Authentication required: Yes (admin role).
     Request body:
 
+json
 {
   "FirstName": "John",
   "LastName": "Doe",
@@ -44,7 +45,7 @@ API Endpoints
 }
 
 Response:
-
+json
 {
   "Message": "User created successfully"
 }
@@ -53,12 +54,14 @@ POST /login
 
 Description: Authenticate a user and generate a JWT token.
 Request body:
+json
 {
   "Email": "johndoe@example.com",
   "Password": "password123"
 }
 
 Response:
+json
 {
   "Message": "Login Successfuly",
   "Token": "your_token"
@@ -70,6 +73,7 @@ Description: Update user information.
 Authentication required: Yes (admin role).
 Request body:
 
+json
 {
   "FName": "John",
   "LName": "Smith",
@@ -77,6 +81,7 @@ Request body:
 }
 
 Response:
+json
 {
   "Message": "User updated successfully",
   "NewInfo": {
@@ -93,10 +98,12 @@ Description: Delete a user and their associated todos.
 Authentication required: Yes (admin role).
 Request body:
 
+json
 {
   "id": 1
 }
 Response:
+json
 {
   "Message": "User deleted successfully"
 }
@@ -107,12 +114,14 @@ POST /addtodo
 Description: Add a new todo.
 Authentication required: Yes (admin role).
 Request body:
+json
 {
   "title": "Finish project",
   "id": 1
 }
 
 Response:
+json
 {
   "Message": "Todo added successfully",
   "Todo": {
@@ -129,11 +138,13 @@ POST /updatetodo
 Description: Update a todo.
 Authentication required: Yes (user role).
 Request body:
+json
 {
   "id": 1,
   "Status": true
 }
 Response:
+json
 {
   "Message": "Todo Updated",
   "update": {
@@ -150,10 +161,12 @@ POST /deletetodo
 Description: Delete a todo.
 Authentication required: Yes (admin role).
 Request body:
+json
 {
   "id": 1
 }
 Response:
+json
 {
   "Message": "Todo Deleted Successfully"
 }
@@ -163,6 +176,7 @@ GET /
 Description: Get all todos for the authenticated user (user role) or all users and their todos (admin role).
 Authentication required: Yes
 Response (for user role):
+json
 {
   "User": {
     "id": 1,
@@ -182,6 +196,7 @@ Response (for user role):
 }
 
 Response (for admin role):
+json
 {
   "Users": [
     {
