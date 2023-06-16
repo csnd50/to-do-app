@@ -9,7 +9,7 @@ Port = process.env.PORT;
 app.listen(Port, () => {});
 
 
-//1- add user just for who have access to update use
+//1- add user 
 app.post(
   "/adduser",
   Rigestaration.CheckLogged,
@@ -20,14 +20,14 @@ app.post(
 app.post("/login", Rigestaration.Login, (req, res, next) => {
   res.status(200).json({ Message: "Login Successfuly", Token: req.token });
 });
-//3- update user info just for who have access to update users
+//3- update user 
 app.post(
   "/updateuser",
   Rigestaration.CheckLogged,
   Rigestaration.CheckRole,
   Rigestaration.UpdateUserInfo
 );
-//4- delete Users with todos just for who have access to update users
+//4- delete Users with todos 
 app.post(
   "/deleteuser",
   Rigestaration.CheckLogged,
@@ -54,4 +54,4 @@ app.post(
 );
 
 //8- Get Todos
-app.get("/", Rigestaration.CheckLogged,Todo.gettodos);
+app.get("/", Rigestaration.CheckLogged,Todo.gettodos );

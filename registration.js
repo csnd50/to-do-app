@@ -16,9 +16,6 @@ class Rigestaration {
         try {
           // Verify and decode the token using the secret key
           const decoded = jwt.verify(token, process.env.SECERTKEY);
-
-          // The decoded data from the token is available here
-
           // Pass the decoded data to the next middleware or route handler
           req.decoded = decoded;
 
@@ -108,7 +105,6 @@ class Rigestaration {
             // Generate JWT
             req.token = token;
             delete req.body;
-            //return res.status(200).json({ Message: "Login successful", Token: token }); // Include JWT in response
             next();
           } else {
             // Passwords do not match

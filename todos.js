@@ -62,7 +62,7 @@ class Todo {
     }
   }
 
-  //for users
+  //for all
   static async gettodos(req, res) {
     const { decoded } = req;
     try {
@@ -81,8 +81,8 @@ class Todo {
                 id: true,
                 title: true,
                 completed: true,
-                createdAt:true,
-                updatedAt:true,
+                createdAt: true,
+                updatedAt: true,
               },
             },
           },
@@ -102,8 +102,8 @@ class Todo {
               id: true,
               title: true,
               completed: true,
-              createdAt:true,
-              updatedAt:true,
+              createdAt: true,
+              updatedAt: true,
             },
           },
         },
