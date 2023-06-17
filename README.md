@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Todo App API
 
 This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
@@ -26,9 +24,12 @@ Set the database URL in the .env file:
 
 DATABASE_URL=your_database_url.
 
-Set your Port in .env file.
-Set your Secert-key in .env file.
-Set your Rounds in .env file.
+Set your Port in .env file Port =3000.
+
+Set your Secert-key in .env file   SECERTKEY="Your secert-key.
+
+Set your Rounds in .env file   SALT_ROUNDS = 10.
+
 
 4. Start the server:
    npm run devStart
@@ -36,43 +37,43 @@ Set your Rounds in .env file.
 
 API Endpoints
 
-    POST /adduser
+    1. POST /adduser
     Description: Add a new user.
     Authentication required: Yes (admin role).
 
-    POST /login
+    2. POST /login
 
     Description: Authenticate a user and generate a JWT token.
 
 
-    POST /updateuser
+    3. POST /updateuser
 
     Description: Update user information.
     Authentication required: Yes (admin role).
 
 
-    POST /deleteuser
+    4. POST /deleteuser
 
     Description: Delete a user and their associated todos.
     Authentication required: Yes (admin role).
 
-    POST /addtodo
+    5. POST /addtodo
 
     Description: Add a new todo.
     Authentication required: Yes (admin role).
 
-    POST /updatetodo
+    6. POST /updatetodo
 
     Description: Update a todo.
     Authentication required: Yes (user role).
 
 
-    POST /deletetodo
+    7. POST /deletetodo
 
     Description: Delete a todo.
     Authentication required: Yes (admin role).
 
-    GET /
+    8. GET /
 
     Description: Get all todos for the authenticated user (user role) or all users and their todos (admin role).
     Authentication required: Yes

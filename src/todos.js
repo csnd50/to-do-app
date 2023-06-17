@@ -7,7 +7,6 @@ class Todo {
     const { title, id } = req.body;
     const Id = parseInt(id);
     try {
-      
       const todo = await prisma.todo.create({
         data: {
           title: title,
