@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # Todo App API
 
 This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
@@ -8,12 +9,14 @@ This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/csnd50/TO-DO-APP.git
+   git clone https://github.com/csnd50/to-do-app.git
+
+   ```
 
 2. Install the dependencies:
 
-    cd todo-app-api
-    npm install
+   cd todo-app-api
+   npm install
 
 3. Set up the database:
 
@@ -21,236 +24,55 @@ Create a PostgreSQL database.
 
 Set the database URL in the .env file:
 
-DATABASE_URL=your_database_url
+DATABASE_URL=your_database_url.
+
+Set your Port in .env file.
+Set your Secert-key in .env file.
+Set your Rounds in .env file.
 
 4. Start the server:
-    npm run devStart
-The server will start running on http://localhost:3000.
+   npm run devStart
+   The server will start running on http://localhost:3000.
 
 API Endpoints
 
     POST /adduser
     Description: Add a new user.
     Authentication required: Yes (admin role).
-    Request body:
 
-json
-{
-  "FirstName": "John",
-  "LastName": "Doe",
-  "Email": "johndoe@example.com",
-  "Password": "password123",
-  "ConfirmPassword": "password123",
-  "Role": "USER"
-}
+    POST /login
 
-Response:
-json
-{
-  "Message": "User created successfully"
-}
-
-POST /login
-
-Description: Authenticate a user and generate a JWT token.
-Request body:
-json
-{
-  "Email": "johndoe@example.com",
-  "Password": "password123"
-}
-
-Response:
-json
-{
-  "Message": "Login Successfuly",
-  "Token": "your_token"
-}
-
-POST /updateuser
-
-Description: Update user information.
-Authentication required: Yes (admin role).
-Request body:
-
-json
-{
-  "FName": "John",
-  "LName": "Smith",
-  "role": "ADMIN"
-}
-
-Response:
-json
-{
-  "Message": "User updated successfully",
-  "NewInfo": {
-    "id": 1,
-    "FirstName": "John",
-    "LastName": "Smith",
-    "Role": "ADMIN"
-  }
-}
-
-POST /deleteuser
-
-Description: Delete a user and their associated todos.
-Authentication required: Yes (admin role).
-Request body:
-
-json
-{
-  "id": 1
-}
-Response:
-json
-{
-  "Message": "User deleted successfully"
-}
+    Description: Authenticate a user and generate a JWT token.
 
 
-POST /addtodo
+    POST /updateuser
 
-Description: Add a new todo.
-Authentication required: Yes (admin role).
-Request body:
-json
-{
-  "title": "Finish project",
-  "id": 1
-}
-
-Response:
-json
-{
-  "Message": "Todo added successfully",
-  "Todo": {
-    "id": 1,
-    "title": "Finish project",
-    "completed": false,
-    "createdAt": "2023-06-15T12:00:00Z",
-    "updatedAt": "2023-06-15T12:00:00Z"
-  }
-}
-
-POST /updatetodo
-
-Description: Update a todo.
-Authentication required: Yes (user role).
-Request body:
-json
-{
-  "id": 1,
-  "Status": true
-}
-Response:
-json
-{
-  "Message": "Todo Updated",
-  "update": {
-    "id": 1,
-    "title": "Finish project",
-    "completed": true,
-    "createdAt": "2023-06-15T12:00:00Z",
-    "updatedAt": "2023-06-15T12:30:00Z"
-  }
-}
-
-POST /deletetodo
-
-Description: Delete a todo.
-Authentication required: Yes (admin role).
-Request body:
-json
-{
-  "id": 1
-}
-Response:
-json
-{
-  "Message": "Todo Deleted Successfully"
-}
-
-GET /
-
-Description: Get all todos for the authenticated user (user role) or all users and their todos (admin role).
-Authentication required: Yes
-Response (for user role):
-json
-{
-  "User": {
-    "id": 1,
-    "FirstName": "John",
-    "LastName": "Doe",
-    "Role": "USER",
-    "Todo": [
-      {
-        "id": 1,
-        "title": "Finish project",
-        "completed": true,
-        "createdAt": "2023-06-15T12:00:00Z",
-        "updatedAt": "2023-06-15T12:30:00Z"
-      }
-    ]
-  }
-}
-
-Response (for admin role):
-json
-{
-  "Users": [
-    {
-      "id": 1,
-      "FirstName": "John",
-      "LastName": "Doe",
-      "Role": "USER",
-      "Todo": [
-        {
-          "id": 1,
-          "title": "Finish project",
-          "completed": true,
-          "createdAt": "2023-06-15T12:00:00Z",
-          "updatedAt": "2023-06-15T12:30:00Z"
-        }
-      ]
-    },
-        {
-      "id": 1,
-      "FirstName": "John",
-      "LastName": "leo",
-      "Role": "USER",
-      "Todo": [
-        {
-          "id": 1,
-          "title": "Finish project",
-          "completed": true,
-          "createdAt": "2023-06-15T12:00:00Z",
-          "updatedAt": "2023-06-15T12:30:00Z"
-        }
-      ]
-    },
-        {
-      "id": 1,
-      "FirstName": "John",
-      "LastName": "smith",
-      "Role": "AMDIN",
-      "Todo": [
-        {
-          "id": 1,
-          "title": "Finish project",
-          "completed": true,
-          "createdAt": "2023-06-15T12:00:00Z",
-          "updatedAt": "2023-06-15T12:30:00Z"
-        }
-      ]
-    },
-  ]
-}
+    Description: Update user information.
+    Authentication required: Yes (admin role).
 
 
+    POST /deleteuser
+
+    Description: Delete a user and their associated todos.
+    Authentication required: Yes (admin role).
+
+    POST /addtodo
+
+    Description: Add a new todo.
+    Authentication required: Yes (admin role).
+
+    POST /updatetodo
+
+    Description: Update a todo.
+    Authentication required: Yes (user role).
 
 
-=======
-# TO-DO-APP
-This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
->>>>>>> origin/master
+    POST /deletetodo
+
+    Description: Delete a todo.
+    Authentication required: Yes (admin role).
+
+    GET /
+
+    Description: Get all todos for the authenticated user (user role) or all users and their todos (admin role).
+    Authentication required: Yes
