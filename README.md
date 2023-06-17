@@ -13,7 +13,7 @@ This is a RESTful API for a Todo App built with Node.js, Express, and Prisma.
 
 2. Install the dependencies:
 
-   cd todo-app-api
+   cd todo-app-app
    npm install
 
 3. Set up the database:
@@ -37,7 +37,7 @@ Set your Rounds in .env file   SALT_ROUNDS = 10.
 
 API Endpoints
 
-    1. POST /adduser
+    1. POST /add-user
     Description: Add a new user.
     Authentication required: Yes (admin role).
 
@@ -46,29 +46,29 @@ API Endpoints
     Description: Authenticate a user and generate a JWT token.
 
 
-    3. POST /updateuser
+    3. POST /update-user
 
     Description: Update user information.
     Authentication required: Yes (admin role).
 
 
-    4. POST /deleteuser
+    4. POST /delete-user
 
     Description: Delete a user and their associated todos.
     Authentication required: Yes (admin role).
 
-    5. POST /addtodo
+    5. POST /add-todo
 
     Description: Add a new todo.
     Authentication required: Yes (admin role).
 
-    6. POST /updatetodo
+    6. POST /update-todo
 
     Description: Update a todo.
     Authentication required: Yes (user role).
 
 
-    7. POST /deletetodo
+    7. POST /delete-todo
 
     Description: Delete a todo.
     Authentication required: Yes (admin role).
